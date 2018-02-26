@@ -26,7 +26,7 @@ REQS_NO_AUDIO_TXT = "requirements_no_audio.txt"
 FFMPEG_BUILDS_URL = "https://ffmpeg.zeranoe.com/builds/"
 
 INTRO = ("==========================\n"
-         "Red Discord Bot - Launcher\n"
+         "Theman-Bot Discord Bot - Launcher\n"
          "==========================\n")
 
 IS_WINDOWS = os.name == "nt"
@@ -43,15 +43,15 @@ FFMPEG_FILES = {
 
 
 def parse_cli_arguments():
-    parser = argparse.ArgumentParser(description="Red - Discord Bot's launcher")
+    parser = argparse.ArgumentParser(description="Theman-Bot - Discord Bot's launcher")
     parser.add_argument("--start", "-s",
-                        help="Starts Red",
+                        help="Starts Theman-Bot",
                         action="store_true")
     parser.add_argument("--auto-restart",
-                        help="Autorestarts Red in case of issues",
+                        help="Autorestarts Theman-Bot in case of issues",
                         action="store_true")
     parser.add_argument("--update-red",
-                        help="Updates Red (git)",
+                        help="Updates Theman-Bot (git)",
                         action="store_true")
     parser.add_argument("--update-reqs",
                         help="Updates requirements (w/ audio)",
@@ -281,9 +281,9 @@ def update_menu():
             status = "Basic + audio requirements installed"
         print("Status: " + status + "\n")
         print("Update:\n")
-        print("Red:")
-        print("1. Update Red + requirements (recommended)")
-        print("2. Update Red")
+        print("Theman-Bot:")
+        print("1. Update Theman-Bot + requirements (recommended)")
+        print("2. Update Theman-Bot")
         print("3. Update requirements")
         print("\nOthers:")
         print("4. Update pip (might require admin privileges)")
@@ -321,7 +321,7 @@ def maintenance_menu():
     while True:
         print(INTRO)
         print("Maintenance:\n")
-        print("1. Repair Red (discards code changes, keeps data intact)")
+        print("1. Repair Theman-Bot (discards code changes, keeps data intact)")
         print("2. Wipe 'data' folder (all settings, cogs' data...)")
         print("3. Wipe 'lib' folder (all local requirements / local installed"
               " python packages)")
@@ -345,7 +345,7 @@ def maintenance_menu():
             reset_red(reqs=True)
             wait()
         elif choice == "4":
-            print("Are you sure? This will wipe ALL your Red's installation "
+            print("Are you sure? This will wipe ALL your Theman-Bot installation "
                   "data.\nYou'll lose all your settings, cogs and any "
                   "modification you have made.\nThere is no going back.")
             if user_pick_yes_no():
@@ -380,13 +380,13 @@ def run_red(autorestart):
             if code == 0:
                 break
             elif code == 26:
-                print("Restarting Red...")
+                print("Restarting Theman-Bot...")
                 continue
             else:
                 if not autorestart:
                     break
 
-    print("Red has been terminated. Exit code: %d" % code)
+    print("Theman-Bot has been terminated. Exit code: %d" % code)
 
     if INTERACTIVE_MODE:
         wait()
@@ -443,7 +443,7 @@ def calculate_md5(filename):
 
 
 def create_fast_start_scripts():
-    """Creates scripts for fast boot of Red without going
+    """Creates scripts for fast boot of Theman-Bot without going
     through the launcher"""
     interpreter = sys.executable
     if not interpreter:
@@ -495,7 +495,7 @@ def main():
     has_git = is_git_installed()
     is_git_installation = os.path.isdir(".git")
     if IS_WINDOWS:
-        os.system("TITLE Red Discord Bot - Launcher")
+        os.system("TITLE Theman-Bot Discord Bot - Launcher")
     clear_screen()
 
     try:
@@ -507,7 +507,7 @@ def main():
         print(INTRO)
 
         if not is_git_installation:
-            print("WARNING: It doesn't look like Red has been "
+            print("WARNING: It doesn't look like Theman-Bot has been "
                   "installed with git.\nThis means that you won't "
                   "be able to update and some features won't be working.\n"
                   "A reinstallation is recommended. Follow the guide "
@@ -519,8 +519,8 @@ def main():
                   "installed or not in the PATH environment variable like "
                   "requested in the guide.\n")
 
-        print("1. Run Red /w autorestart in case of issues")
-        print("2. Run Red")
+        print("1. Run Theman-Bot /w autorestart in case of issues")
+        print("2. Run Theman-Bot")
         print("3. Update")
         print("4. Install requirements")
         print("5. Maintenance (repair, reset...)")
@@ -554,7 +554,7 @@ if __name__ == '__main__':
             wait()
         exit(1)
     if pip is None:
-        print("Red cannot work without the pip module. Please make sure to "
+        print("Theman-Bot cannot work without the pip module. Please make sure to "
               "install Python without unchecking any option during the setup")
         wait()
         exit(1)
@@ -569,5 +569,5 @@ if __name__ == '__main__':
     if INTERACTIVE_MODE:
         main()
     elif args.start:
-        print("Starting Red...")
+        print("Starting Theman-Bot...")
         run_red(autorestart=args.auto_restart)
