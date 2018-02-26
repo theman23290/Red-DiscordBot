@@ -14,8 +14,7 @@ try:
 except ImportError:
     print("Discord.py is not installed.\n"
           "Consult the guide for your operating system "
-          "and do ALL the steps in order.\n"
-          "https://twentysix26.github.io/Red-Docs/\n")
+          "and do ALL the steps in order")
     sys.exit(1)
 
 from cogs.utils.settings import Settings
@@ -25,19 +24,19 @@ from collections import Counter
 from io import TextIOWrapper
 
 #
-# Red, a Discord bot by Twentysix, based on discord.py and its command
+# Theman-Bot, a Discord bot by Twentysix, based on discord.py and its command
 #                             extension.
 #
 #                   https://github.com/Twentysix26/
 #
 #
-# red.py and cogs/utils/checks.py both contain some modified functions
+# Theman-Bot.py and cogs/utils/checks.py both contain some modified functions
 #                     originally made by Rapptz.
 #
 #                 https://github.com/Rapptz/RoboDanny/
 #
 
-description = "Red - A multifunction Discord bot by Twentysix"
+description = "Theman-Bot - A multifunction Discord bot"
 
 
 class Bot(commands.Bot):
@@ -302,7 +301,7 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
         owner = await set_bot_owner()
 
         print("-----------------")
-        print("Red - Discord Bot")
+        print("Theman-Bot - Discord Bot")
         print("-----------------")
         print(str(bot.user))
         print("\nConnected to:")
@@ -324,7 +323,7 @@ def initialize(bot_class=Bot, formatter_class=Formatter):
             bot.oauth_url = url
             print(url)
 
-        print("\nOfficial server: https://discord.gg/red")
+        print("\n")
 
         print("Make sure to keep your bot updated. Select the 'Update' "
               "option from the launcher.")
@@ -407,7 +406,6 @@ def interactive_setup(settings):
     if first_run:
         print("Red - First run configuration\n")
         print("If you haven't already, create a new account:\n"
-              "https://twentysix26.github.io/Red-Docs/red_guide_bot_accounts/"
               "#creating-a-new-bot-account")
         print("and obtain your bot's token like described.")
 
